@@ -25,7 +25,6 @@ pipeline {
             steps{
                 sh './jenkins/scripts/deliver.sh'
                 sleep (time: 1, unit: 'MINUTES')
-                input message: "Lanjutkan Kill ?"
                 sh './jenkins/scripts/kill.sh'
             }
         }
