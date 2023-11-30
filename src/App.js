@@ -1,31 +1,24 @@
-import React, { Component} from 'react';
-import logo from './logo.svg';
+import React from "react"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './home';
+import Login from './login';
 import './App.css';
+import { useEffect, useState } from 'react';
 
-class App extends Component {
-  constructor(props){  
-    super(props);  
-    this.state = {  
-         data: 'THis is the data that shows when you clicked the button'  
-      }  
-    this.handleEvent = this.handleEvent.bind(this);  
-  }  
-  handleEvent(){  
-    console.log(this.props);  
-  }  
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [email, setEmail] = useState("")
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+          <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
