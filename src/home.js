@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./App.css";
 import { getPadTime } from "./helpers/getPadTime";
+import logo from './logo.svg';
 
 const Home = (props) => {
   const [timeLeft, setTimeLeft] = useState(5 * 60);
@@ -34,36 +35,29 @@ const Home = (props) => {
   }, [isCouting, timeLeft]);
   return (
     <div className="mainContainer">
-
         <div className={"titleContainer"}>
-
             <h1>React App Timer</h1>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React logo" />
+            <img src={logo} className="App-logo" alt="logo"/>
             <p>React App TImer web apps</p>
-
         </div>
-
         <div>
-
             This is the home page.
-
         </div>
-    <div className="app">
-      <div className="timer">
-        <span>{minutes}</span>
-        <span>:</span>
-        <span>{seconds}</span>
-      </div>
-      <div className="buttons">
-        {isCouting ? (
-          <button onClick={handleStop}>Stop</button>
-        ) : (
-          <button onClick={handleStart}>Start</button>
-        )}
-
-        <button onClick={handleReset}>Reset</button>
-      </div>
-    </div>
+        <div className="app">
+        <div className="timer">
+            <span>{minutes}</span>
+            <span>:</span>
+            <span>{seconds}</span>
+        </div>
+        <div className="buttons">
+            {isCouting ? (
+            <button onClick={handleStop}>Stop</button>
+            ) : (
+            <button onClick={handleStart}>Start</button>
+            )}
+            <button onClick={handleReset}>Reset</button>
+        </div>
+        </div>
     </div>
   );
 }
