@@ -37,7 +37,9 @@ const Home = (props) => {
 
         <div className={"titleContainer"}>
 
-            <div>Welcome!</div>
+            <h1>React App Timer</h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React logo" />
+            <p>React App TImer web apps</p>
 
         </div>
 
