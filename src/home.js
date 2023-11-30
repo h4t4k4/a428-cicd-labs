@@ -20,7 +20,7 @@ const Home = (props) => {
   };
   const handleReset = () => {
     setIsCouting(false);
-    setTimeLeft(2 * 60);
+    setTimeLeft(5 * 60);
   };
 
   useEffect(() => {
