@@ -4,7 +4,7 @@ import "./App.css";
 import { getPadTime } from "./helpers/getPadTime";
 
 const Home = (props) => {
-  const [timeLeft, setTimeLeft] = useState(2 * 60);
+  const [timeLeft, setTimeLeft] = useState(5 * 60);
   const [isCouting, setIsCouting] = useState(false);
 
   const minutes = getPadTime(Math.floor(timeLeft / 60));
