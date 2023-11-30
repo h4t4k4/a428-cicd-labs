@@ -33,6 +33,19 @@ const Home = (props) => {
     };
   }, [isCouting, timeLeft]);
   return (
+    <div className="mainContainer">
+
+        <div className={"titleContainer"}>
+
+            <div>Welcome!</div>
+
+        </div>
+
+        <div>
+
+            This is the home page.
+
+        </div>
     <div className="app">
       <div className="timer">
         <span>{minutes}</span>
@@ -48,6 +61,7 @@ const Home = (props) => {
 
         <button onClick={handleReset}>Reset</button>
       </div>
+    </div>
     </div>
   );
 }
